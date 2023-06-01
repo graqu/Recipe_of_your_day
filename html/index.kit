@@ -8,12 +8,69 @@
     <title>Recipe of your day</title>
     <link rel="icon" type="image/png" href="./dist/img/icons8-kitchen-32.png">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400;600&family=Pacifico&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/0fad84ab50.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./dist/css/style.min.css">
 </head>
 
 <body>
 
-    <main class="main"></main>
+    <main class="main wrapper">
+        <section class="recipes-app">
+            <div class="recipes-box">
+                <h1 class="recipes-heading">Your favorite recipes</h1>
+                <button class="btn recipes-add-btn">Add New</button>
+
+                <div class="recipe-item extended">
+                    <div class="recipe-item-heading">
+                        <div>
+                            <h3 class="recipe-name">Kurczak w sosie beszamelowym</h3>
+                            <p class="recipe-ingredients">kurczak, ryż, sosl beszamelowy</p>
+                        </div>
+                        <div class="recipe-modify-icon recipe-extender">
+                            <i class="fa-solid fa-plus"></i>
+                        </div>
+                    </div>
+
+                    <div class="recipe-introduction">
+                        <div class="recipe-introduction-text">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam modi repudiandae harum
+                                illo
+                                sunt assumenda voluptatem amet quisquam. Esse, minima.</p>
+                        </div>
+                        <div class="recipe-modify-icons">
+                            <div class="recipe-modify-icon recipe-editor"><i class="fa-solid fa-pen-to-square"></i>
+                            </div>
+                            <div class="recipe-modify-icon recipe-remover"><i class="fa-solid fa-trash"></i></div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+
+
+            </div>
+            <div class="recipes-popup hide">
+                <div class="recipes-popup-box">
+                    <h2 class="popup-heading">create/edit recipe</h2>
+                    <p class="popup-input-desc">Name:</p>
+                    <input type="text" class="popup-input" placeholder="fill name of food">
+                    <p class="popup-input-desc">Ingredients:</p>
+                    <input type="text" class="popup-input" placeholder="Wchich ingrediends You need ? ">
+                    <p class="popup-input-desc">Short introduction:</p>
+                    <input type="text" class="popup-input" placeholder="How to do it ?">
+                    <div><button class="btn submit-btn">Submit</button></div>
+                    <div class="popup-cancel">x</div>
+                </div>
+            </div>
+        </section>
+    </main>
     <!-- @include 'footer.kit'-->
     <script src="./dist/js/script.min.js"></script>
 </body>
