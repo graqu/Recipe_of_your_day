@@ -36,11 +36,7 @@ button {
 	font-family: 'Inter', sans-serif;
 	cursor: pointer;
 }
-.wrapper {
-	margin-left: auto;
-	margin-right: auto;
-	max-width: 1200px;
-}
+
 
 ///Main
 .main {
@@ -48,12 +44,15 @@ button {
 	justify-content: center;
 	align-items: center;
 	min-height: 100vh;
+	width: 100%;
 }
 
 ///Recipes APP
 .recipes-app {
+	flex-grow: 1;
 	.recipes-box,
 	.recipes-popup-box {
+		margin: 30px 0;
 		padding: 20px;
 		background-color: var(--lead-color);
 		min-height: 600px;
@@ -89,6 +88,9 @@ button {
 				padding: 5px;
 				background-color: var(--custom-white);
 				border-radius: 5px;
+				p {
+					overflow-wrap: break-word;
+				}
 			}
 		}
 		.recipe-modify-icons {
@@ -106,6 +108,7 @@ button {
 		}
 		i {
 			margin: 10px;
+			pointer-events: none;
 		}
 	}
 	.extended {
@@ -118,6 +121,38 @@ button {
 	}
 	.hide {
 		display: none;
+	}
+	.recipes-popup {
+		&-box {
+			position: relative;
+		}
+		p {
+			margin: 0.5em 0;
+		}
+		input,
+		textarea {
+			padding: 0.5em 1em;
+			margin-bottom: 20px;
+			width: 100%;
+			font-size: 1.6rem;
+			font-family: 'Inter', sans-serif;
+			border: none;
+			border-radius: 5px;
+		}
+		textarea {
+			min-height: 220px;
+			resize: vertical;
+		}
+		.popup-cancel {
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			padding: 0.5em 0.8em;
+			border-radius: 50%;
+			background-color: var(--cta-color);
+			color: var(--custom-white);
+			cursor: pointer;
+		}
 	}
 
 	.recipes-add-btn,
@@ -144,8 +179,10 @@ button {
 ///Media
 @media (min-width: 768px) {
 	.recipes-app {
+		flex-grow: 0;
 		.recipes-box,
 		.recipes-popup-box {
+			width: 700px;
 			border-radius: 20px;
 			box-shadow: 18px 15px 20px rgba(0, 0, 0, 0.326);
 		}

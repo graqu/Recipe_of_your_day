@@ -18,9 +18,9 @@
 
 <body>
 
-    <main class="main wrapper">
-        <section class="recipes-app">
-            <div class="recipes-box">
+    <main class="main ">
+        <section class="recipes-app ">
+            <div class="recipes-box ">
                 <h1 class="recipes-heading">Your favorite recipes</h1>
                 <button class="btn recipes-add-btn">Add New</button>
 
@@ -30,7 +30,7 @@
                             <h3 class="recipe-name">Kurczak w sosie beszamelowym</h3>
                             <p class="recipe-ingredients">kurczak, ryż, sosl beszamelowy</p>
                         </div>
-                        <div class="recipe-modify-icon recipe-extender">
+                        <div class="recipe-modify-icon recipe-extender" onclick="handleExtension(event)">
                             <i class="fa-solid fa-plus"></i>
                         </div>
                     </div>
@@ -42,9 +42,9 @@
                                 sunt assumenda voluptatem amet quisquam. Esse, minima.</p>
                         </div>
                         <div class="recipe-modify-icons">
-                            <div class="recipe-modify-icon recipe-editor"><i class="fa-solid fa-pen-to-square"></i>
+                            <div class="recipe-modify-icon recipe-editor" onclick="runEditor(event)"><i class="fa-solid fa-pen-to-square"></i>
                             </div>
-                            <div class="recipe-modify-icon recipe-remover"><i class="fa-solid fa-trash"></i></div>
+                            <div class="recipe-modify-icon recipe-remover" onclick="removeRecipe(event)"><i class="fa-solid fa-trash"></i></div>
 
                         </div>
                     </div>
@@ -60,11 +60,14 @@
                 <div class="recipes-popup-box">
                     <h2 class="popup-heading">create/edit recipe</h2>
                     <p class="popup-input-desc">Name:</p>
-                    <input type="text" class="popup-input" placeholder="fill name of food">
+                    <input type="text" class="popup-input" placeholder="fill name of food" maxlength="30"
+                        id="food-name">
                     <p class="popup-input-desc">Ingredients:</p>
-                    <input type="text" class="popup-input" placeholder="Wchich ingrediends You need ? ">
+                    <input type="text" class="popup-input" placeholder="Wchich ingrediends You need ? " maxlength="100"
+                        id="ingredients">
                     <p class="popup-input-desc">Short introduction:</p>
-                    <input type="text" class="popup-input" placeholder="How to do it ?">
+                    <textarea class="popup-input" placeholder="How to do it ?" maxlength="250"
+                        id="food-description"></textarea>
                     <div><button class="btn submit-btn">Submit</button></div>
                     <div class="popup-cancel">x</div>
                 </div>
