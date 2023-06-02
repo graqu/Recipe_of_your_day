@@ -11,6 +11,17 @@ const foodNameInput = document.querySelector('#food-name')
 const foodIngredientsInput = document.querySelector('#ingredients')
 const foodDescInput = document.querySelector('#food-description')
 
+///Default and saved food
+localStorage.setItem('defaultArrayKey', JSON.stringify([]))
+
+const arrToStorage = JSON.parse(localStorage.getItem('defaultArrayKey'))
+const defaultFood1 = ['spagetti', 'pasa,meat,sauce', 'cook Pasta, fry meat and mix all with sauce. Enyoy!']
+
+arrToStorage.push(defaultFood1)
+localStorage.setItem('arrayKey', JSON.stringify(arrToStorage))
+
+console.log(JSON.parse(localStorage.getItem('arrayKey')));
+
 ///LOAD MAIN Values
 
 let editing = false
@@ -39,7 +50,7 @@ const checkSubmit = () => {
 	} else if (checkInputs(ok) && editing) {
 		handlePopup()
 		makeChanges(newFoodName, newFoodIngredients, newFoodDesc)
-        clearPopupInputs()
+		clearPopupInputs()
 		editing = false
 	} else {
 		console.log('czegoś brakuje')
@@ -120,3 +131,4 @@ const makeChanges = (newFoodName, newFoodIngredients, newFoodDesc) => {
 addNewBtn.addEventListener('click', handlePopup)
 submitBtn.addEventListener('click', checkSubmit)
 closePopupBtn.addEventListener('click', handlePopup)
+createRecipe(defaultFood1[0], defaultFood1[1], defaultFood1[2]);
