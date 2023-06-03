@@ -184,6 +184,9 @@ const memoUserChanges = (index, newFoodName, newFoodIngredients, newFoodDesc) =>
 
 addNewBtn.addEventListener('click', handlePopup)
 submitBtn.addEventListener('click', checkSubmit)
-closePopupBtn.addEventListener('click', handlePopup)
+closePopupBtn.addEventListener('click', () => {
+	error.classList.add('hide')
+	handlePopup()
+})
 checkNewUser()
 // updateUserData(arrToStorage)
