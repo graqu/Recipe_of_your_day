@@ -18,7 +18,7 @@ const defaultFood2 = [
 	'Eggs, butter, bread, sausage',
 	'fry Eggs and cutted sausage on butter - Eat with bread',
 ]
-const arrToStorage = JSON.parse(localStorage.getItem('arrayKey'))
+let arrToStorage = JSON.parse(localStorage.getItem('arrayKey'))
 
 ///LOAD MAIN Values
 
@@ -150,10 +150,10 @@ const makeChanges = (newFoodName, newFoodIngredients, newFoodDesc) => {
 
 const checkNewUser = () => {
 	if (arrToStorage === null) {
-		const arr = []
-		arr.push(defaultFood)
-		arr.push(defaultFood2)
-		localStorage.setItem('arrayKey', JSON.stringify(arr))
+		arrToStorage = []
+		arrToStorage.push(defaultFood)
+		arrToStorage.push(defaultFood2)
+		localStorage.setItem('arrayKey', JSON.stringify(arrToStorage))
 		// console.log(`...zaktualizowałem localhost`)
 		createRecipe(defaultFood[0], defaultFood[1], defaultFood[2])
 		createRecipe(defaultFood2[0], defaultFood2[1], defaultFood2[2])
